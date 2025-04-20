@@ -49,31 +49,33 @@ The model automatically distributes across available GPUs via `device_map="auto"
 The prompt uses **few-shot learning** with ATC-specific examples to guide the model in determining:
 
 1. **Contextual Status**  
-   - `"Contextually Equivalent"`: Differences that do not affect operational meaning.  
-   - `"Contextually Different"`: Changes that could impact flight safety or intent.
+    - `"Contextually Equivalent"`: Differences that do not affect operational meaning.  
+    - `"Contextually Different"`: Changes that could impact flight safety or intent.
 
 2. **Errors Detected**  
-   - A concise list of critical deviations.
+    - A concise list of critical deviations.
 
 3. **Explanation**  
-   - A short rationale for why these differences matter.
+    - A short rationale for why these differences matter.
 
 ---
 
 ## Files Overview
 
-| File         | Description                                                             |
-|--------------|-------------------------------------------------------------------------|
-| `main.py`    | Main script to load input JSON, run evaluations, and output results     |
-| `prompt_template` | Embedded in code, includes ATC-specific examples                  |
-| `parse_llm_output()` | Extracts model response into structured fields                 |
-| `requirements.txt` | (Not included here) Install dependencies as needed              |
+| File                  | Description                                                          |
+|-----------------------|----------------------------------------------------------------------|
+| `main.py`             | Main script to load input JSON, run evaluations, and output results  |
+| `prompt_template`     | Embedded in code, includes ATC-specific examples                     |
+| `parse_llm_output()`  | Extracts model response into structured fields                       |
+| `requirements.txt`    | (Not included here) Install dependencies as needed                   |
 
 ---
 
 ## Instructions for Use
 
 ### 1. Install Dependencies
+
+Use `pip` to install the required packages:
 
 ```bash
 pip install torch transformers langchain accelerate bitsandbytes
@@ -86,9 +88,11 @@ from huggingface_hub import login
 login(token="your_hf_token_here")
 ```
 
+---
+
 ### 2. Input Format
 
-Input JSON must follow this structure:
+Your input JSON file should follow this format:
 
 ```json
 [
@@ -99,13 +103,17 @@ Input JSON must follow this structure:
 ]
 ```
 
+---
+
 ### 3. Run the Script
+
+To evaluate the contextual error rate, simply run:
 
 ```bash
 python main.py
 ```
 
-This will generate an output file with additional fields:
+The script will read your input JSON, evaluate each transcription pair using the LLM, and output a new file containing:
 
 - `"Contextual Status"`  
 - `"Errors Detected"`  
@@ -117,8 +125,8 @@ This will generate an output file with additional fields:
 
 ```json
 {
-  "reference": "delta five five six descend to four thousand...",
-  "transcription": "delta five five six descend to five thousand...",
+  "reference": "delta five five six descend to four thousand",
+  "transcription": "delta five five six descend to five thousand",
   "Contextual Status": "Contextually Different",
   "Errors Detected": "Numeric value changed (from four thousand to five thousand)",
   "Explanation": "The altitude difference may affect the intended operational instructions."
@@ -129,13 +137,14 @@ This will generate an output file with additional fields:
 
 ## Dependencies
 
-Install these core libraries:
+You’ll need the following core libraries:
 
 - `torch`
 - `transformers`
 - `huggingface_hub`
 - `bitsandbytes`
 - `langchain`
+- `accelerate` (for efficient loading on large models)
 
 ---
 
