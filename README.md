@@ -130,20 +130,6 @@ The script will read your input JSON, evaluate each transcription pair using the
 }
 ```
 
----
-
-## Dependencies
-
-You’ll need the following core libraries:
-
-- `torch`
-- `transformers`
-- `huggingface_hub`
-- `bitsandbytes`
-- `langchain`
-- `accelerate` (for efficient loading on large models)
-
----
 
 ## Credits
 
