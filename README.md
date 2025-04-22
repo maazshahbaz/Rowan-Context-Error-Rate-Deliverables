@@ -65,8 +65,6 @@ The prompt uses **few-shot learning** with ATC-specific examples to guide the mo
 | File                  | Description                                                          |
 |-----------------------|----------------------------------------------------------------------|
 | `cer.py`             | Main script to load input JSON, run evaluations, and output results  |
-| `prompt_template`     | Embedded in code, includes ATC-specific examples                     |
-| `parse_llm_output()`  | Extracts model response into structured fields                       |
 | `requirements.txt`    | (Not included here) Install dependencies as needed                   |
 
 ---
