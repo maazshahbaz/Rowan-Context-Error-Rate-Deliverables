@@ -65,7 +65,6 @@ The prompt uses **few-shot learning** with ATC-specific examples to guide the mo
 | File                  | Description                                                          |
 |-----------------------|----------------------------------------------------------------------|
 | `cer.py`             | Main script to load input JSON, run evaluations, and output results  |
-| `requirements.txt`    | (Not included here) Install dependencies as needed                   |
 
 ---
 
