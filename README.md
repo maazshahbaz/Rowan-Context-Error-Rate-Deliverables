@@ -118,7 +118,7 @@ The script will read your input JSON, evaluate each transcription pair using the
 
 ---
 
-## Example Output
+## Sample Output
 
 ```json
 {
