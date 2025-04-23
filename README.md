@@ -6,6 +6,22 @@ Using a **Meta LLaMA-3 70B Instruct** model and few-shot prompting, the system c
 
 ---
 
+## 📖 Background (For Non-Technical Users)
+
+In Air Traffic Control (ATC), accurate communication is critical. Traditional metrics like **Word Error Rate (WER)** only count how many words are wrong, but they don't tell you **if those mistakes actually matter**.
+
+For example:
+- Mishearing "**five thousand**" as "**four thousand**" is dangerous.
+- Mishearing "**the**" as "**a**" doesn't matter.
+
+The **FAA Context Error Rate (CER)** focuses on identifying **operationally significant errors** — ensuring that ASR (Automatic Speech Recognition) systems are evaluated based on what truly impacts flight safety.
+
+This tool uses AI (a large language model) to **analyze transcription errors in context**.
+
+---
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)  
