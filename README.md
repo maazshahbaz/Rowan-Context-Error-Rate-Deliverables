@@ -13,7 +13,7 @@ Using a **Meta LLaMA-3 70B Instruct** model and few-shot prompting, the system c
 - [Evaluation Methodology](#evaluation-methodology)  
 - [Files Overview](#files-overview)  
 - [Instructions for Use](#instructions-for-use)  
-- [Example Output](#example-output)  
+- [Sample Output](#sample-output)  
 - [Dependencies](#dependencies)  
 - [Credits](#credits)  
 
