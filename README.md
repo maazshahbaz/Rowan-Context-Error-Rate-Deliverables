@@ -20,8 +20,6 @@ This tool uses AI (a large language model) to **analyze transcription errors in 
 
 ---
 
----
-
 ## Table of Contents
 
 - [Overview](#overview)  
