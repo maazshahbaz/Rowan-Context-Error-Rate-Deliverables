@@ -20,9 +20,10 @@ This tool uses AI (a large language model) to **analyze transcription errors in 
 
 ---
 
-## Table of Contents
+## 📑 Table of Contents
 
 - [Overview](#overview)  
+- [Prerequisites (Non-Technical)](#prerequisites-non-technical)  
 - [Model Setup and Configuration](#model-setup-and-configuration)  
 - [Evaluation Methodology](#evaluation-methodology)  
 - [Files Overview](#files-overview)  
