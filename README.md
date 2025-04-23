@@ -46,6 +46,25 @@ The evaluation is powered by a **quantized LLM pipeline** optimized for large-sc
 
 ---
 
+---
+
+## Prerequisites (Non-Technical)
+
+### What is a Virtual Environment?
+A **virtual environment** is an isolated space on your computer where you can install Python packages without affecting the rest of your system. It keeps dependencies for different projects separate.
+
+### What is Hugging Face?
+[Hugging Face](https://huggingface.co/) is an online platform hosting machine learning models and datasets. We use it to download and run the **Meta LLaMA-3 70B Instruct** model.
+
+### How to Obtain Your Hugging Face Access Token
+1. Sign up or log in at https://huggingface.co/.  
+2. Click your profile → **Settings** → **Access Tokens**.  
+3. Create a **New Token** (give it a name like `faa-cer-token`).  
+4. Copy the token string—you’ll paste it into your code in the next steps.
+
+---
+
+
 ## Model Setup and Configuration
 
 This system uses:
