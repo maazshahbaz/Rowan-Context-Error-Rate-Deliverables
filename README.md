@@ -1,8 +1,8 @@
 # FAA Context Error Rate
 
-This repository contains code for computing the **FAA Context Error Rate (CER)** — a domain-specific metric designed to assess the **operational impact** of transcription errors in Air Traffic Control (ATC) communication.
+This repository contains code for computing the **FAA Context Error Rate (CER)** — a domain-specific metric designed to assess the **operational impact** of transcription errors in Air Traffic Control (ATC) communication. --- In addition, we provide - we have the code of a prompt tuned llm that gives a scoring to the transcriptions.
 
-Using a **Meta LLaMA-3 70B Instruct** model and few-shot prompting, the system compares **reference transcriptions** with **ASR-generated outputs** to evaluate if transcription differences affect critical ATC semantics such as altitudes, headings, or instructions.
+For the CER, we are using a **Meta LLaMA-3 70B Instruct** model and few-shot prompting. The system compares **reference transcriptions** with **ASR-generated outputs** to evaluate if transcription differences affect critical ATC semantics such as altitudes, headings, or instructions.
 
 ---
 
@@ -60,7 +60,13 @@ A **virtual environment** is an isolated space on your computer where you can in
 1. Sign up or log in at https://huggingface.co/.  
 2. Click your profile → **Settings** → **Access Tokens**.  
 3. Create a **New Token** (give it a name like `faa-cer-token`).  
-4. Copy the token string—you’ll paste it into your code in the next steps.
+4. Copy the token string — you’ll paste it into your code in the next steps.
+
+   ## do something similar: In the cer.py file, paste your access token
+
+```python
+access_token = "paste_your_token_here"
+```
 
 ---
 
@@ -98,7 +104,10 @@ The prompt uses **few-shot learning** with ATC-specific examples to guide the mo
 
 | File                  | Description                                                          |
 |-----------------------|----------------------------------------------------------------------|
-| `cer.py`             | Main script to load input JSON, run evaluations, and output results  |
+| `cer.py`              | Main script to load input JSON, run evaluations, and output results  |
+--> subfolder
+        ---> instructions
+        ---> scoring_evaluator.py
 
 ---
 
