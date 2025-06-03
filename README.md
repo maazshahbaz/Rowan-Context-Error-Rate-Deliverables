@@ -1,6 +1,6 @@
 # FAA Context Error Rate
 
-This repository contains code for computing the **FAA Context Error Rate (CER)** — a domain-specific metric designed to assess the **operational impact** of transcription errors in Air Traffic Control (ATC) communication. --- In addition, we provide - we have the code of a prompt tuned llm that gives a scoring to the transcriptions.
+This repository contains code for computing the **FAA Context Error Rate (CER)** — a domain-specific metric designed to assess the **operational impact** of transcription errors in Air Traffic Control (ATC) communication. In addition to our CER implementation, we include a prompt-tuned LLM evaluation pipeline that provides detailed scoring and categorization of transcription errors based on their operational significance.
 
 For the CER, we are using a **Meta LLaMA-3 70B Instruct** model and few-shot prompting. The system compares **reference transcriptions** with **ASR-generated outputs** to evaluate if transcription differences affect critical ATC semantics such as altitudes, headings, or instructions.
 
@@ -102,12 +102,14 @@ The prompt uses **few-shot learning** with ATC-specific examples to guide the mo
 
 ## Files Overview
 
-| File                  | Description                                                          |
-|-----------------------|----------------------------------------------------------------------|
-| `cer.py`              | Main script to load input JSON, run evaluations, and output results  |
---> subfolder
-        ---> instructions
-        ---> scoring_evaluator.py
+| File/Directory                      | Description                                                          |
+|-------------------------------------|----------------------------------------------------------------------|
+| `README.md`                         | Main documentation for CER implementation and usage instructions      |
+| `cer.py`                            | Main script to load input JSON, run evaluations, and output results  |
+| `Scoring based LLM Evaluation/`     | Additional implementation for scoring-based ASR evaluation           |
+| ├── `Evaluation_pipeline.py`        | Implementation using Qwen3-30B-A3B for detailed error categorization |
+| ├── `README.md`                     | Documentation for the scoring-based evaluation approach              |
+| └── `flowchart.png`                 | Visual representation of the evaluation pipeline                      |
 
 ---
 
